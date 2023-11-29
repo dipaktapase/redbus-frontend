@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Project Title
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Redbus 
 
-## Available Scripts
+<img src="/public/redbus 2.png" alt="desktopImg" width="900">
 
-In the project directory, you can run:
+## Deployed Link
 
-### `npm start`
+https://spontaneous-pika-941dbd.netlify.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Content
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies](#technologies-and-tools)
+- [Installation and Setup](#installation-and-setup)
+- [Conclusion](#conclusion)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Introduction 
 
-### `npm run build`
+Redbus is an online bus ticket booking web application that allows users to book online bus seats and travel all around the world with safety and security.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Users can search for any location they want to go.
+- Users can analyze all the available buses and compare them accordingly.
+- Users can track their bus location from their smartphone.
+- Users can make transactions in different types of payment methods.
+- Responsive and User-friendly
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Technologies and Tools
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- React
+- React-Redux
+- JavaScript
+- Tailwind CSS
+- MongoDB
+- Stripe
+- ExpressJS
+- NodeJS
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation and Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Clone down this repository. You will need `node` and `npm` installed globally on your machine.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Installation:
 
-## Learn More
+`npm install`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To Start Server:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`npm run start`
 
-### Code Splitting
+To Visit App:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+`localhost:3000/`
 
-### Analyzing the Bundle Size
+## Conclusion
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Redbus is an online bus ticket booking web application that allows users to book online bus seats and travel all around the world with safety and security. It is a powerful tool for finding and comparing cost-effective transportation options to any desired location. It also allow users to analyze all the available buses and compare them accordingly. Additionally, users can track their bus location in real-time from their smartphones. Furthermore, Redbus offers various payment methods for hassle-free transactions.
 
-### Making a Progressive Web App
+## Note
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p> This capstone project is associated with <a href="https://www.almabetter.com">Almabetter</a>.</p>

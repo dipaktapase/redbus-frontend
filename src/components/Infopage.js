@@ -224,7 +224,7 @@ const Infopage = () => {
             <div className="p-2 md:w-2/3 mr-5">
               <p className="">Email ID</p>
               <input
-                type="text"
+                type="email"
                 className="w-full border-solid border border-red-300 py-2"
                 name="emailID"
                 required
