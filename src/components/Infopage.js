@@ -126,11 +126,11 @@ const Infopage = () => {
   };
 
   return (
-    <form className="mt-28 md:flex px-12 text-lg" onSubmit={submitHandler}>
+    <form className="md:flex px-12 text-lg" onSubmit={submitHandler}>
       {/* User Details and trip confirmation */}
       <div className="md:w-4/5 p-4 w-full">
-        <div className="md:flex mb-2 w-full justify-between border-solid border border-red-300 rounded-md mb-4">
-          <div className="px-4 md:px-[4rem] w-full">
+        <div className="md:flex mb-2 w-full justify-between border-solid border border-red-300 rounded-md mb-4 group relative">
+          <div className="px-4 md:px-[4rem] w-full mb-4">
             <div className="flex gap-1">
               <h3 className="pr-4">{checkoutTrip.busName}</h3>
 
@@ -151,11 +151,19 @@ const Infopage = () => {
                 <p>{checkoutTrip.timeDiff} Hours to Reach</p>
               </div>
 
-              <div className="md:w-1/3">
+              <div className="md:w-1/3 mb-2">
                 <p className="">{getDate(checkoutTrip.EndTime)}</p>
                 <p className="text-2xl">{checkoutTrip.to}</p>
               </div>
             </div>
+            <lable className="mb-4 md:opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100 ">
+              Amenities List :-{" "}
+              <span>
+                {Array.isArray(checkoutTrip.amenities_list)
+                  ? checkoutTrip.amenities_list.join(", ")
+                  : checkoutTrip.amenities_list}
+              </span>
+            </lable>
           </div>
 
           <div className="bg-red-500 p-0.5 mr-8 w-full md:w-0 " />
@@ -163,7 +171,7 @@ const Infopage = () => {
             <div className="flex md:block mx-auto gap-1">
               <h3>Trip Price</h3>
               <p className="text-gray-200 p-1">Starting from</p>
-              <h2 className="md:ml-6">₹ {checkoutTrip.busFare}</h2>
+              <h2 className="md:ml-1">₹ {checkoutTrip.busFare}</h2>
             </div>
           </div>
         </div>
@@ -269,7 +277,7 @@ const Infopage = () => {
             Total Price<span>₹ {checkoutTrip.busFare}</span>
           </p>
         </div>
-        <PaymentElement required />
+        <PaymentElement />
         <div className="flex justify-center mt-8 ">
           <button
             disabled={isProcessing}

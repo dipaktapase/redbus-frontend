@@ -57,13 +57,7 @@ const DEFAULT_TRIPS_STATE = {
   busName: "",
   busNo: "",
   seatBooked: [],
-  amenities_list: [
-    "Live Tracking",
-    "Policies",
-    "Photos",
-    "Amenities",
-    "Reviews",
-  ],
+  amenities_list: [],
   busFare: "",
 };
 

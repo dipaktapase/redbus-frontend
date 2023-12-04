@@ -152,6 +152,26 @@ const Home = () => {
         payload: [1012, 6264, 8182, 1112, 1212][Math.floor(Math.random() * 5)],
       });
 
+      const Amenities = [
+        "Live Tracking",
+        "Charging Point",
+        "Reading Light",
+        "Deep Cleaned Buses",
+        "Massage chair",
+        "CCTV",
+        "USB port for charger",
+        "Water Bottle",
+        "Blankets",
+        "Pillow",
+        "Emergency Contact Number",
+      ]
+
+      dispatch({
+        type: "SET_AMENITIES_LIST",
+        payload: Amenities.sort(() => Math.random() - 0.5).slice(0, 4)
+        
+      })
+
       dispatch({
         type: "SET_OWNERID",
         payload: [122, 123, 124, 125, 126][Math.floor(Math.random() * 5)],
@@ -166,14 +186,15 @@ const Home = () => {
 
       dispatch(createTripData());
     }
+    
     history.push("/trip-list");
 
   };
 
   return (
     <>
-      <div className="mt-24 pt-[26rem] text-center bg-cover bg-center border" style={{ backgroundImage: `url(${bgImg})` }}>
-        <form className="my-4 p-2" onSubmit={submitHandler}>
+      <div className="pt-[13rem] md:pt-[26rem] text-center bg-cover bg-center border" style={{ backgroundImage: `url(${bgImg})` }}>
+        <form className="py-4" onSubmit={submitHandler}>
           <input
             type="text"
             className="h-20 text-2xl mb-2 w-[14rem] md:w-1/5 rounded-md border px-2"
@@ -237,7 +258,7 @@ const Home = () => {
           <div className="pt-6">
             <button
               type="submit"
-              className="text-white px-9 py-3 bg-red-700 hover:bg-red-800 cursor-pointer focus:outline-none text-sm  text-center md:ml-4 border-none rounded-md dark:bg-red-600 dark:hover:bg-red-700 mb-4"
+              className="text-white h-14 w-48 text-lg bg-red-700 hover:bg-red-800 cursor-pointer focus:outline-none text-sm  text-center md:ml-4 border-none rounded-md dark:bg-red-600 dark:hover:bg-red-700 mb-10"
               // onChange={}
             >
               Search

@@ -5,16 +5,16 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className=" py-0 bg-whitesmoke-200 pb-8 w-full">
+    <div className="py-0 bg-whitesmoke-200 pb-8 w-full">
       <img
         src={logo}
         alt="f-logo"
         height="140"
         width="140"
-        className="mx-auto md:mx-0 mt-4 justify-center"
+        className="pl-6 mx-auto md:mx-0 mt-4 justify-center"
       />
 
-      <div className="md:grid grid-cols-3">
+      <div className="md:grid grid-cols-3 px-4">
         <div className="grid p-2 m-2 justify-between">
           <p className="mb-1">When you have a choice choose Redbus.</p>
           <p className="mb-1">
@@ -27,7 +27,7 @@ const Footer = () => {
         <div className="p-2 m-2">
           <label className="font-semibold">About</label>
           <p>
-            <Link to="">Contact US</Link>
+            <Link to="/about-us">About Us</Link>
           </p>
         </div>
 
@@ -43,7 +43,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <p className="container text-center">
+      <p className="container text-center px-4">
         {" "}
         Ⓒ 2023 Redbus India Pvt Ltd. All rights reserved
       </p>

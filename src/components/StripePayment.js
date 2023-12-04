@@ -8,8 +8,13 @@ const Stripe = () => {
   const [stripePromise, setStripePromise] = useState(null);
   const [clientSecret, setClientSecret] = useState("");
 
+
+const URL = "https://redbus-backend-zmne.onrender.com";
+// const URL = "http://localhost:10000";
+
+
   useEffect(() => {
-    fetch("https://redbus-backend-zmne.onrender.com/config").then(async (r) => {
+    fetch(`${URL}/config`).then(async (r) => {
       const { publishableKey } = await r.json();
 
       setStripePromise(loadStripe(publishableKey));
@@ -18,7 +23,7 @@ const Stripe = () => {
   }, []);
 
   useEffect(() => {
-    fetch("https://redbus-backend-zmne.onrender.com/create-payment-intent", {
+    fetch(`${URL}/create-payment-intent`, {
       method: "POST",
       body: JSON.stringify({}),
     })

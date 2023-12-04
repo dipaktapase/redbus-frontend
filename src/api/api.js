@@ -1,9 +1,12 @@
 import axios from "axios";
 
-// Get state data from the mongoDB 
+const URL = "https://redbus-backend-zmne.onrender.com";
+// const URL = "http://localhost:10000";
+
+// Get state data from the mongoDB
 export const getStateData = async () => {
   try {
-    const response = await axios.get("https://redbus-backend-zmne.onrender.com/api/states");
+    const response = await axios.get(`${URL}/api/states`);
     return response.data;
   } catch (error) {
     console.error("Failed to get trip data from the database:", error);
@@ -24,7 +27,7 @@ export const getTripData = async (
 ) => {
   try {
     const response = await axios.get(
-      `https://redbus-backend-zmne.onrender.com/api/trips?date=${date}&from=${from}&to=${to}&startTime=&EndTime=&busOwnerID=${busOwnerID}&rating=${rating}&busName=${busName}`
+      `${URL}/api/trips?date=${date}&from=${from}&to=${to}&startTime=&EndTime=&busOwnerID=${busOwnerID}&rating=${rating}&busName=${busName}`
     );
     return response.data;
   } catch (error) {
@@ -32,7 +35,7 @@ export const getTripData = async (
   }
 };
 
-// Create a new trip data 
+// Create a new trip data
 export const createTrip = async (
   date,
   from,
@@ -50,7 +53,7 @@ export const createTrip = async (
   busFare
 ) => {
   try {
-    const response = await axios.post("https://redbus-backend-zmne.onrender.com/api/trips", {
+    const response = await axios.post(`${URL}/api/trips`, {
       date,
       from,
       to,
@@ -85,7 +88,7 @@ export const createBooking = async (
   passengerID
 ) => {
   try {
-    const response = await axios.post("https://redbus-backend-zmne.onrender.com/api/bookings", {
+    const response = await axios.post(`${URL}/api/bookings`, {
       name,
       emailID,
       gender,
@@ -104,7 +107,7 @@ export const createBooking = async (
 // Fetch user
 export const getUserData = async () => {
   try {
-    const response = await axios.get("https://redbus-backend-zmne.onrender.com/api/bookings");
+    const response = await axios.get(`${URL}/api/bookings`);
     return response.data;
   } catch (error) {
     console.error("Failed to get user data from the database:", error);

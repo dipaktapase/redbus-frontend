@@ -104,7 +104,7 @@ export const createTripData = () => {
       if (isDataEntered) {
         dispatch({
           type: "SET_TRIPS_DATA",
-          payload: [
+          payload: state.tripReducer.tripsData.concat([
             {
               date: date,
               from: from,
@@ -121,7 +121,7 @@ export const createTripData = () => {
               busFare: busFare,
               busName: busName,
             },
-          ],
+          ]),
         });
       }
     } catch (error) {

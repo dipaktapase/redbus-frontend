@@ -5,7 +5,13 @@ const Filter = () => {
     <div className="border-solid border border-red-300 p-4 rounded-md">
       <div className="flex justify-between">
         <h2>Filter</h2>
-        <h4 className="pt-1">Clear all</h4>
+        <p
+          className="pt-1 text-2xl font-bold"
+          onClick={() => window.location.reload()}
+          style={{ cursor: "pointer" }}
+        >
+          Clear all
+        </p>
       </div>
 
       <div className="">

@@ -13,6 +13,10 @@ const Buspage = () => {
   const [seatsOpen, setSeatsOpen] = useState(false);
   const [openTripIndex, setOpenTripIndex] = useState(null);
   const tripsData = useSelector((state) => state.tripReducer.tripsData);
+  const seatBooked = useSelector((state) => state.tripReducer.seatBooked);
+
+  if (seatBooked.length > 1) {
+  }
 
   useEffect(() => {
     dispatch(fetchTripData());
@@ -58,15 +62,14 @@ const Buspage = () => {
   };
 
   return (
-    <div className="flex mt-24 md:px-12">
-      {/* Date component */}
+    <div className="flex md:px-12">
       <div className="hidden sm:block md:w-1/5 p-2 md:p-4 ">
         <Filter />
       </div>
 
       <div className="md:w-4/5 p-4 ">
         {displayedTrips?.map((trip, index) => (
-          <div className="mb-4 rounded-md " key={index}>
+          <div className="mb-4 rounded-md group relative" key={index}>
             <div className="md:flex w-full justify-between border-solid border border-red-300 rounded-md mb-4">
               <div className="px-4 md:px-[4rem] w-full">
                 <div className="flex gap-1">
@@ -98,6 +101,16 @@ const Buspage = () => {
                     <p className="text-2xl">{trip.to}</p>
                   </div>
                 </div>
+
+                <lable className="md:opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">
+                  Amenities List :-{" "}
+                  <span>
+                    {/* {tripamenities_list} */}
+                    {Array.isArray(trip.amenities_list)
+                      ? trip.amenities_list.join(", ")
+                      : trip.amenities_list}
+                  </span>
+                </lable>
               </div>
 
               <div className="bg-red-500 p-0.5 mr-8 w-full md:w-0" />
@@ -109,7 +122,7 @@ const Buspage = () => {
                 </div>
                 <button
                   onClick={() => handleViewSeatClick(index)}
-                  className="mt-4 md:mt-0 text-white px-5 py-2 bg-red-700 hover:bg-red-800 focus:outline-none text-sm text-center border-none rounded-md dark:bg-red-600 dark:hover:bg-red-700 mb-4"
+                  className="mt-4 md:mt-0 text-white px-5 py-2 bg-red-700 hover:bg-red-800 focus:outline-none text-sm text-center border-none rounded-md dark:bg-red-600 dark:hover:bg-red-700 mb-4 cursor-pointer"
                 >
                   {seatsOpen ? "Hide Seats" : "View Seats"}
                 </button>
@@ -117,14 +130,15 @@ const Buspage = () => {
             </div>
             {/* View Seat / Hide Seat dropdown for selecting seats */}
             {openTripIndex === index && (
-              <div className=" bg-whitesmoke-200 p-4 mt-0">
+              <div className="rounded-md bg-whitesmoke-200 p-4 mt-0">
                 <SeatSelectTest />
                 <p className="mb-0">
                   👆 Confirm seats before proceed to payment.
                 </p>
                 <button
+                  disabled={seatBooked.length === 0}
                   onClick={() => handleViewSeat(trip)}
-                  className="text-white px-5 py-2 mt-4 bg-red-700 hover:bg-red-800 focus:outline-none text-sm text-center border-none rounded-md dark:bg-red-600 dark:hover:bg-red-700 mb-4"
+                  className="text-white px-5 py-2 mt-4 bg-red-700 hover:bg-red-800 focus:outline-none text-sm text-center border-none rounded-md dark:bg-red-600 dark:hover:bg-red-700 mb-4 cursor-pointer"
                 >
                   Proceed to Payment
                 </button>
@@ -139,14 +153,14 @@ const Buspage = () => {
             Page {currentPage} of {totalPages}
           </p>
           <button
-            className="text-white px-2 py-1 bg-red-700 hover:bg-red-800 focus:outline-none text-sm text-center border-none rounded-md dark:bg-red-600 dark:hover:bg-red-700 mb-4 mr-2"
+            className="text-white px-2 py-1 bg-red-700 hover:bg-red-800 focus:outline-none text-sm text-center border-none rounded-md dark:bg-red-600 dark:hover:bg-red-700 mb-4 mr-2 cursor-pointer"
             disabled={currentPage === 1}
             onClick={() => handlePageChange(currentPage - 1)}
           >
             Previous
           </button>
           <button
-            className="text-white px-2 py-1 bg-red-700 hover:bg-red-800 focus:outline-none text-sm text-center border-none rounded-md dark:bg-red-600 dark:hover:bg-red-700 mb-4"
+            className="text-white px-2 py-1 bg-red-700 hover:bg-red-800 focus:outline-none text-sm text-center border-none rounded-md dark:bg-red-600 dark:hover:bg-red-700 mb-4 cursor-pointer"
             disabled={currentPage === totalPages}
             onClick={() => handlePageChange(currentPage + 1)}
           >

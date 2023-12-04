@@ -26,7 +26,7 @@ const Receiptpage = () => {
 
   // console.log(lastUserData);
   return (
-    <div className="mt-28 text-center border-solid border border-red-300 container mx-auto p-4 rounded-md md:w-[62rem] mb-4">
+    <div className="mt-4 text-center border-solid border border-red-300 container mx-auto p-4 rounded-md md:w-[62rem] mb-4">
       <img src={check} alt="confirm" className="h-16 w-16" />
       <h2 className="">Booking has been Confirmed</h2>
       <p className="text-2xl">
